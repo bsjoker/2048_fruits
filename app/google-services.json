@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "349201914601",
+    "firebase_url": "https://ru-skillsoft-a20fruits48.firebaseio.com",
+    "project_id": "ru-skillsoft-a20fruits48",
+    "storage_bucket": "ru-skillsoft-a20fruits48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349201914601:android:6495fc191101891a30ee78",
+        "android_client_info": {
+          "package_name": "ru.skillsoft.a20fruits48"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349201914601-8qhabjgdqq5kup30miclpnr4itlv3olp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.skillsoft.a20fruits48",
+            "certificate_hash": "fb598fed967a79ee002e5dc6ea86ece399a9e0cd"
+          }
+        },
+        {
+          "client_id": "349201914601-uuaar81q45kqniql1e1bcm02i88qam70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLOcfWmunMHGlXdtsu3RbRvs6s9wxsQRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349201914601-uuaar81q45kqniql1e1bcm02i88qam70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
