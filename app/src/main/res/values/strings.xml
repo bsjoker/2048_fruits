@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">2048 фрукты</string>
     <string name="main_string">Join the numbers and get to the 2048 tile!</string>
-    <string name="facebook_app_id">616782019177224</string>
-    <string name="fb_login_protocol_scheme">fb616782019177224</string>
+    <string name="facebook_app_id">530429144303870</string>
+    <string name="fb_login_protocol_scheme">fb530429144303870</string>
+
+    <string-array name="iconsList">
+        <item>monkey</item>
+        <item>vegas</item>
+        <item>sevenshell</item>
+        <item>sevensruby</item>
+        <item>strawberry</item>
+        <item>pharaon</item>
+        <item>shtirliz</item>
+        <item>book</item>
+    </string-array>
+
 </resources>

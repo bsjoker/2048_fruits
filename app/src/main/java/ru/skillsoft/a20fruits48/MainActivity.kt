@@ -7,14 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.facebook.FacebookSdk
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.prefs.Preferences
 import kotlin.math.log2
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchListener {
-
     var touchX = 0.0f
     var touchY = 0.0f
     var score = 0
@@ -32,14 +28,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchList
     lateinit var sp: SharedPreferences
 
     var board_positions = arrayListOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    //var board_positions = arrayListOf(2, 2, 4, 2, 8, 2, 4, 2, 4, 8, 4, 8, 0, 16, 2, 16)
-    //var board_positions = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        FacebookSdk.sdkInitialize(this)
 
         sp = getSharedPreferences("mySP", Context.MODE_PRIVATE)
 
@@ -51,52 +43,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchList
 
         Log.d("TAG", "Stepen: " + log2(8.0f))
         root.setOnTouchListener(this)
-//        root.setOnTouchListener(View.OnTouchListener { v, event ->
-//            when (event?.action) {
-//                MotionEvent.ACTION_DOWN -> {
-//                    touchX = event.rawX
-//                    touchY = event.rawY
-//                    Log.d("TAG", "TouchX: $touchX")
-//                    Log.d("TAG", "TouchY: $touchY")
-//                }
-//
-//                MotionEvent.ACTION_MOVE -> {
-//                    //Log.d("TAG", "MoveX: ${event.rawX}")
-//                    //Log.d("TAG", "MoveY: ${event.rawY}")
-//                    if (event.rawX - touchX > 50 && !registerMovement) {
-//                        Log.d("TAG", "Offset: right")
-//                        registerMovement = true
-//                        doMove(Direction.RIGHT)
-//                    }
-//
-//                    if (event.rawX - touchX < -50 && !registerMovement) {
-//                        Log.d("TAG", "Offset: left")
-//                        registerMovement = true
-//                        doMove(Direction.LEFT)
-//                    }
-//
-//                    if (event.rawY - touchY > 50 && !registerMovement) {
-//                        Log.d("TAG", "Offset: down")
-//                        registerMovement = true
-//                        doMove(Direction.DOWN)
-//                    }
-//
-//                    if (event.rawY - touchY < -50 && !registerMovement) {
-//                        Log.d("TAG", "Offset: up")
-//                        registerMovement = true
-//                        doMove(Direction.UP)
-//                    }
-//                    //Log.d("TAG", "Offset: ${event.rawX}")
-//                }
-//                MotionEvent.ACTION_UP -> {
-//                    touchX = 0.0f
-//                    touchY = 0.0f
-//                    registerMovement = false
-//                }
-//            }
-//
-//            true
-//        })
     }
 
     private fun setRandomNumbers() {
@@ -166,11 +112,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchList
             }
         }
 
-        Log.d("TAG", "board_positions_1_before: $board_positions_1")
-        Log.d("TAG", "board_positions_2_before: $board_positions_2")
-        Log.d("TAG", "board_positions_3_before: $board_positions_3")
-        Log.d("TAG", "board_positions_4_before: $board_positions_4")
-
         board_positions_1 = calculateSumm(board_positions_1, direction)
         board_positions_2 = calculateSumm(board_positions_2, direction)
         board_positions_3 = calculateSumm(board_positions_3, direction)
@@ -200,11 +141,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchList
             setRandomNumbers()
             setGird()
         }
-
-        Log.d("TAG", "board_positions_1: $board_positions_1")
-        Log.d("TAG", "board_positions_2: $board_positions_2")
-        Log.d("TAG", "board_positions_3: $board_positions_3")
-        Log.d("TAG", "board_positions_4: $board_positions_4")
     }
 
     private fun calculateSumm(array: ArrayList<Int>, dir: Direction): ArrayList<Int> {
@@ -322,7 +258,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchList
                     registerMovement = true
                     doMove(Direction.UP)
                 }
-                //Log.d("TAG", "Offset: ${event.rawX}")
             }
             MotionEvent.ACTION_UP -> {
                 touchX = 0.0f
